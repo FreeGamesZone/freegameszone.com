@@ -1,68 +1,60 @@
-/* Body and general styles */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #e0f7fa; /* Light blue background */
+* {
     margin: 0;
     padding: 0;
-    text-align: center;
+    box-sizing: border-box;
 }
 
-/* Header styling */
+body {
+    font-family: Arial, sans-serif;
+    background: #1e1e2f;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
 header {
-    background-color: #00796b; /* Dark teal */
-    color: white;
+    background: #282846;
     padding: 20px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
 }
 
-/* Games container */
-.games-list {
+header h1 {
+    color: #ffdd57;
+}
+
+main {
+    flex: 1;
     display: flex;
     justify-content: center;
+    align-items: center;
+}
+
+.games-container {
+    display: flex;
     gap: 20px;
-    margin: 30px;
-    flex-wrap: wrap; /* Responsive wrapping */
 }
 
-/* Individual game card */
-.game-card {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    width: 200px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
-    transition: transform 0.2s;
-}
-
-/* Hover effect for game cards */
-.game-card:hover {
-    transform: scale(1.05);
-}
-
-/* Game buttons */
 button {
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: #00796b;
-    color: white;
+    padding: 15px 30px;
+    font-size: 18px;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.2s;
+    background: #ffdd57;
+    color: #282846;
+    transition: transform 0.2s, background 0.2s;
 }
 
-/* Button hover effect */
 button:hover {
-    background-color: #004d40;
+    transform: scale(1.1);
+    background: #ffc107;
 }
 
-/* Footer styling */
 footer {
-    background-color: #00796b;
-    color: white;
+    text-align: center;
     padding: 15px;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
+    background: #282846;
+    box-shadow: 0 -4px 8px rgba(0,0,0,0.5);
 }
