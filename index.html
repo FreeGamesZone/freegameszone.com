@@ -1,28 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3 Free Games Zone</title>
-    <link rel="stylesheet" href="CSS/style.css">
+  <meta charset="UTF-8">
+  <title>Universe of Games</title>
+  <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
-    <header>
-        <h1>🎮 3 Free Games Zone</h1>
-    </header>
 
-    <main>
-        <div class="games-container">
-            <button onclick="openGame('Game 1')">Play Game 1</button>
-            <button onclick="openGame('Game 2')">Play Game 2</button>
-            <button onclick="openGame('Game 3')">Play Game 3</button>
-        </div>
-    </main>
+<!-- TOP BAR -->
+<header class="topbar">
+  <div class="logo">🎮 Universe of Games</div>
+  <input
+    type="text"
+    id="searchInput"
+    placeholder="Search games..."
+    onkeyup="searchGames()"
+  >
+</header>
 
-    <footer>
-        <p>© 2026 3 Free Games Zone</p>
-    </footer>
+<!-- GAMES GRID -->
+<section class="games" id="gamesList">
 
-    <script src="JS/main.js" defer></script>
+  <!-- 20 GAME CARDS -->
+  <!-- copy-paste pattern -->
+  <div class="card"><div class="thumb"></div><h3>Racing Game</h3><button>Play</button></div>
+  <div class="card"><div class="thumb"></div><h3>Shooter Game</h3><button>Play</button></div>
+  <div class="card"><div class="thumb"></div><h3>Puzzle Game</h3><button>Play</button></div>
+  <div class="card"><div class="thumb"></div><h3>Car Stunt</h3><button>Play</button></div>
+  <div class="card"><div class="thumb"></div><h3>Bike Racing</h3><button>Play</button></div>
+
+  <div class="card"><div class="thumb"></div><h3>Sniper Game</h3><button>Play</button></div>
+  <div class="card"><div class="thumb"></div><h3>Zombie Attack</h3><button>Play</button></div>
+  <div class="card"><div class="thumb"></div><h3>Football Game</h3><button>Play</button></div>
+  <div class="card"><div class="thumb"></div><h3>Cricket Game</h3><button>Play</button></div>
+  <div class="card"><div class="thumb"></div><h3>Basketball</h3><button>Play</button></div>
+
+  <div class="card"><div class="thumb"></div><h3>Arcade Fun</h3><button>Play</button></div>
+  <div class="card"><div class="thumb"></div><h3>Flying Jet</h3><button>Play</button></div>
+  <div class="card"><div class="thumb"></div><h3>Tank Battle</h3><button>Play</button></div>
+  <div class="card"><div class="thumb"></div><h3>War Strategy</h3><button>Play</button></div>
+  <div class="card"><div class="thumb"></div><h3>Survival Game</h3><button>Play</button></div>
+
+  <div class="card"><div class="thumb"></div><h3>Endless Runner</h3><button>Play</button></div>
+  <div class="card"><div class="thumb"></div><h3>Block Puzzle</h3><button>Play</button></div>
+  <div class="card"><div class="thumb"></div><h3>Monster Game</h3><button>Play</button></div>
+  <div class="card"><div class="thumb"></div><h3>Helicopter War</h3><button>Play</button></div>
+  <div class="card"><div class="thumb"></div><h3>Speed Challenge</h3><button>Play</button></div>
+
+</section>
+
+<!-- ABOUT -->
+<footer class="about">
+  <h2>About Universe of Games</h2>
+  <p>
+    Universe of Games ek modern online gaming platform hai jahan aap
+    free HTML5 games enjoy kar sakte hain — bina download, bina signup.
+  </p>
+  <p>
+    Hamara focus hai fast loading, clean design aur enjoyable gameplay.
+    Yeh website Poki-style experience dene ke liye design ki gayi hai,
+    taake har user mobile aur PC dono par smoothly games khel sake.
+  </p>
+  <p>
+    Roz naye games add kiye jaate hain aur future mein categories,
+    full-screen mode aur multiplayer options bhi shamil honge.
+  </p>
+</footer>
+
+<script src="JS/main.js"></script>
 </body>
 </html>
