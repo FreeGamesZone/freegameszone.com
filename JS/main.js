@@ -1,6 +1,3 @@
-/* =====================
-   SEARCH (same)
-===================== */
 function searchGames() {
   let input = document.getElementById("searchInput").value.toLowerCase();
   let cards = document.querySelectorAll(".card");
@@ -11,72 +8,50 @@ function searchGames() {
   });
 }
 
-/* =====================
-   SNOW (PROPER ON/OFF)
-===================== */
+/* SNOW */
 const canvas = document.getElementById("snow");
 const ctx = canvas.getContext("2d");
 
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
 let snowflakes = [];
+let animationId;
 let snowActive = true;
-let animationId = null;
 
-function resizeCanvas() {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
+for (let i = 0; i < 120; i++) {
+  snowflakes.push({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    r: Math.random() * 3 + 1,
+    s: Math.random() * 1.5 + 0.5
+  });
 }
-resizeCanvas();
-window.addEventListener("resize", resizeCanvas);
 
-function createSnow() {
-  snowflakes = [];
-  for (let i = 0; i < 120; i++) {
-    snowflakes.push({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
-      r: Math.random() * 3 + 1,
-      speed: Math.random() * 1.5 + 0.5
-    });
-  }
-}
-createSnow();
-
-function drawSnow() {
+function snow() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-  snowflakes.forEach(flake => {
+  snowflakes.forEach(f => {
     ctx.beginPath();
-    ctx.arc(flake.x, flake.y, flake.r, 0, Math.PI * 2);
+    ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2);
     ctx.fillStyle = "white";
     ctx.fill();
-
-    flake.y += flake.speed;
-    if (flake.y > canvas.height) {
-      flake.y = -5;
-      flake.x = Math.random() * canvas.width;
+    f.y += f.s;
+    if (f.y > canvas.height) {
+      f.y = -5;
+      f.x = Math.random() * canvas.width;
     }
   });
-
-  animationId = requestAnimationFrame(drawSnow);
+  animationId = requestAnimationFrame(snow);
 }
+snow();
 
-/* START snow */
-drawSnow();
-
-/* =====================
-   TOGGLE BUTTON (REAL)
-===================== */
-const btn = document.getElementById("snowBtn");
-
-btn.addEventListener("click", () => {
+document.getElementById("snowBtn").onclick = () => {
   snowActive = !snowActive;
-
   if (!snowActive) {
     cancelAnimationFrame(animationId);
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    btn.innerText = "❄ Snow OFF";
+    ctx.clearRect(0,0,canvas.width,canvas.height);
   } else {
-    drawSnow();
-    btn.innerText = "❄ Snow ON";
+    snow();
   }
-});
+};
+
