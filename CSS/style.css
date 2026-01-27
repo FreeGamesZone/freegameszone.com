@@ -274,3 +274,73 @@ footer {
 .hidden {
   display: none;
 }
+/* ===== MOBILE RESPONSIVE ===== */
+@media screen and (max-width: 768px) {
+  
+  /* Topbar / Logo & Search */
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 20px;
+  }
+
+  .topbar .logo img {
+    height: 100px; /* chhota logo */
+  }
+
+  #searchInput {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  /* Hero Slider Content */
+  .slide-content {
+    bottom: 15%;
+    left: 5%;
+    padding: 20px;
+  }
+
+  .slide-content h1 {
+    font-size: 28px;
+  }
+
+  .slide-content p {
+    font-size: 14px;
+  }
+
+  .slide-content button {
+    padding: 10px 18px;
+    font-size: 14px;
+  }
+
+  /* Games Grid */
+  .games {
+    grid-template-columns: repeat(auto-fit, minmax(160px,1fr));
+    gap: 15px;
+    padding: 20px;
+  }
+
+  .card img {
+    height: 120px;
+  }
+
+  /* Folders */
+  .folders {
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+  }
+
+  .folder {
+    font-size: 16px;
+    padding: 16px;
+  }
+
+  /* Floating Logo */
+  .topbar.floating .logo img {
+    height: 70px;
+    bottom: 15px;
+    right: 15px;
+  }
+}
+

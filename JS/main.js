@@ -95,3 +95,12 @@ snowBtn.style.zIndex = "9999";
 
 // start snow
 drawSnow();
+let flakesCount = window.innerWidth < 768 ? 50 : 150; // mobile friendly flakes
+for(let i=0;i<flakesCount;i++){
+  flakes.push({
+    x: Math.random()*canvas.width,
+    y: Math.random()*canvas.height,
+    r: Math.random()*3 + 1,
+    s: Math.random()*1.5 + 0.5
+  });
+}
