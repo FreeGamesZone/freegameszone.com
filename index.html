@@ -1,186 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Universe of Games</title>
-<link rel="stylesheet" href="CSS/style.css">
-<link rel="icon" href="logo1.png">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Universe of Games</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="icon" href="logo1.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
-<!-- SNOW -->
 <canvas id="snow"></canvas>
 <button id="snowBtn">❄ Snow ON</button>
 
-<!-- TOP BAR -->
 <header class="topbar">
-  <div class="logo">
-    <img src="logo.png" alt="Universe of Games">
-  </div>
-  <input type="text" id="searchInput" placeholder="Search games...">
+    <a href="javascript:location.reload()" class="logo">
+        <a href="javascript:location.reload()" class="logo">
+    <img src="logo.png" alt="Gaming Universe" class="logo-img">
+</a>
+    </a>
+
+    <nav class="main-nav">
+        <a href="#gamesList" class="nav-btn">🎮 Games to Play</a>
+        <a href="#downloads" class="nav-btn">⬇ Games to Download</a>
+    </nav>
+
+    <input type="text" id="searchInput" placeholder="Search games...">
 </header>
 
-<!-- HERO SLIDER -->
 <section class="hero-slider">
-  <div class="slide active" style="background-image:url('games/minecraft-key-art-feature.jpg')">
-    <div class="slide-content">
-      <h1>Minecraft</h1>
-      <p>Best Sandbox Game Ever</p>
-      <a href="https://eaglercraft.com/play/?version=1.12.2-wasm" target="_blank">
-        <button>▶ Play Now</button>
-      </a>
+    <div class="slide active" style="background-image:url('games/minecraft-key-art-feature.jpg')">
+        <div class="slide-content">
+            <h1>Minecraft</h1>
+            <a href="https://eaglercraft.com/play/?version=1.12.2-wasm" target="_blank">
+                <button>▶ Play Now</button>
+            </a>
+        </div>
     </div>
-  </div>
-  <div class="slide" style="background-image:url('games/images (1).jpeg')">
-    <div class="slide-content">
-      <h1>Hill Climb Racing</h1>
-      <p>Fun Physics Racing</p>
-      <a href="https://poki.com/en/g/hill-climb-racing-lite" target="_blank">
-        <button>▶ Play Now</button>
-      </a>
+    <div class="slide" style="background-image:url('games/images (1).jpeg')">
+        <div class="slide-content">
+            <h1>Hill Climb Racing</h1>
+            <a href="https://poki.com/en/g/hill-climb-racing-lite" target="_blank">
+                <button>▶ Play Now</button>
+            </a>
+        </div>
     </div>
-  </div>
-  <div class="slide" style="background-image:url('games/2.jpeg')">
-    <div class="slide-content">
-      <h1>Blockpost</h1>
-      <p>FPS Block Shooter</p>
-      <a href="https://poki.com/en/g/blockpost" target="_blank">
-        <button>▶ Play Now</button>
-      </a>
+    <div class="slide" style="background-image:url('games/2.jpeg')">
+        <div class="slide-content">
+            <h1>Blockpost</h1>
+            <a href="https://poki.com/en/g/blockpost" target="_blank">
+                <button>▶ Play Now</button>
+            </a>
+        </div>
     </div>
-  </div>
 </section>
-
-<!-- ALL GAMES -->
+<h2 class="section-title">🔥 Games to Play</h2>
 <section class="games" id="gamesList">
+    <div class="card">
+        <img src="games/images (1).jpeg">
+        <h3>Hill Climb Racing</h3>
+        <a href="https://poki.com/en/g/hill-climb-racing-lite" target="_blank">
+            <button class="play-btn">▶ Play</button>
+        </a>
+    </div>
 
-  <div class="card">
-    <img src="games/images (1).jpeg">
-    <h3>Hill Climb Racing</h3>
-    <a href="https://poki.com/en/g/hill-climb-racing-lite" target="_blank">
-      <button class="play-btn">▶ Play</button>
-    </a>
-  </div>
+    <div class="card">
+        <img src="games/images (2).jpeg">
+        <h3>Solar Smash</h3>
+        <a href="https://poki.com/en/g/solar-smash" target="_blank">
+            <button class="play-btn">▶ Play</button>
+        </a>
+    </div>
 
-  <div class="card">
-    <img src="games/images (2).jpeg">
-    <h3>Solar Smash</h3>
-    <a href="https://poki.com/en/g/solar-smash" target="_blank">
-      <button class="play-btn">▶ Play</button>
-    </a>
-  </div>
+    <div class="card">
+        <img src="games/images (3).jpeg">
+        <h3>Short Life</h3>
+        <a href="https://poki.com/en/g/short-life" target="_blank">
+            <button class="play-btn">▶ Play</button>
+        </a>
+    </div>
 
-  <div class="card">
-    <img src="games/images (3).jpeg">
-    <h3>Short Life</h3>
-    <a href="https://poki.com/en/g/short-life" target="_blank">
-      <button class="play-btn">▶ Play</button>
-    </a>
-  </div>
+    <div class="card">
+        <img src="games/minecraft-key-art-feature.jpg">
+        <h3>Minecraft</h3>
+        <a href="https://www.minecraft.net/en-us/play/minecraft-classic" target="_blank">
+            <button class="play-btn">▶ Play</button>
+        </a>
+    </div>
 
-  <div class="card">
-    <img src="games/minecraft-key-art-feature.jpg">
-    <h3>Minecraft</h3>
-    <a href="https://www.minecraft.net/en-us/play/minecraft-classic" target="_blank">
-      <button class="play-btn">▶ Play</button>
-    </a>
-  </div>
+    <div class="card">
+        <img src="games/2.jpeg">
+        <h3>Blockpost</h3>
+        <a href="https://poki.com/en/g/blockpost" target="_blank">
+            <button class="play-btn">▶ Play</button>
+        </a>
+    </div>
 
-  <div class="card">
-    <img src="games/2.jpeg">
-    <h3>Blockpost</h3>
-    <a href="https://poki.com/en/g/blockpost" target="_blank">
-      <button class="play-btn">▶ Play</button>
-    </a>
-  </div>
+    <div class="card">
+        <img src="games/images (4).jpeg">
+        <h3>Basketball Stars</h3>
+        <a href="https://poki.com/en/g/basketball-stars" target="_blank">
+            <button class="play-btn">▶ Play</button>
+        </a>
+    </div>
 
-  <div class="card">
-    <img src="games/images (4).jpeg">
-    <h3>Basketball Stars</h3>
-    <a href="https://poki.com/en/g/basketball-stars" target="_blank">
-      <button class="play-btn">▶ Play</button>
-    </a>
-  </div>
+    <div class="card">
+        <img src="games/images (5).jpeg">
+        <h3>Venge.io</h3>
+        <a href="https://poki.com/en/g/venge-io" target="_blank">
+            <button class="play-btn">▶ Play</button>
+        </a>
+    </div>
 
-  <div class="card">
-    <img src="games/images (5).jpeg">
-    <h3>Venge.io</h3>
-    <a href="https://poki.com/en/g/venge-io" target="_blank">
-      <button class="play-btn">▶ Play</button>
-    </a>
-  </div>
+    <div class="card">
+        <img src="games/images (6).jpeg">
+        <h3>Moto X3M</h3>
+        <a href="https://poki.com/en/g/moto-x3m" target="_blank">
+            <button class="play-btn">▶ Play</button>
+        </a>
+    </div>
 
-  <div class="card">
-    <img src="games/images (6).jpeg">
-    <h3>Moto X3M</h3>
-    <a href="https://poki.com/en/g/moto-x3m" target="_blank">
-      <button class="play-btn">▶ Play</button>
-    </a>
-  </div>
+    <div class="card">
+        <img src="games/images (7).jpeg">
+        <h3>Stickman Hook</h3>
+        <a href="https://poki.com/en/g/stickman-hook" target="_blank">
+            <button class="play-btn">▶ Play</button>
+        </a>
+    </div>
 
-  <div class="card">
-    <img src="games/images (7).jpeg">
-    <h3>Stickman Hook</h3>
-    <a href="https://poki.com/en/g/stickman-hook" target="_blank">
-      <button class="play-btn">▶ Play</button>
-    </a>
-  </div>
+    <div class="card">
+        <img src="games/images (8).jpeg">
+        <h3>12 MiniBattles</h3>
+        <a href="https://poki.com/en/g/12-minibattles" target="_blank">
+            <button class="play-btn">▶ Play</button>
+        </a>
+    </div>
 
-  <div class="card">
-    <img src="games/images (8).jpeg">
-    <h3>12 MiniBattles</h3>
-    <a href="https://poki.com/en/g/12-minibattles" target="_blank">
-      <button class="play-btn">▶ Play</button>
-    </a>
-  </div>
+    <div class="card">
+        <img src="games/images (9).jpeg">
+        <h3>Popular Words</h3>
+        <a href="https://poki.com/en/g/popular-words" target="_blank">
+            <button class="play-btn">▶ Play</button>
+        </a>
+    </div>
 
-  <div class="card">
-    <img src="games/images (9).jpeg">
-    <h3>Popular Words</h3>
-    <a href="https://poki.com/en/g/popular-words" target="_blank">
-      <button class="play-btn">▶ Play</button>
-    </a>
-  </div>
-
-  <div class="card">
-    <img src="games/images (10).jpeg">
-    <h3>Guess What?</h3>
-    <a href="https://poki.com/en/g/guess-what" target="_blank">
-      <button class="play-btn">▶ Play</button>
-    </a>
-  </div>
-
+    <div class="card">
+        <img src="games/images (10).jpeg">
+        <h3>Guess What?</h3>
+        <a href="https://poki.com/en/g/guess-what" target="_blank">
+            <button class="play-btn">▶ Play</button>
+        </a>
+    </div>
 </section>
 
 
-
-
-
-<!-- GAME FOLDERS -->
-<h2 class="section-title">📂 Game Categories</h2>
-<section class="folders">
-  <div class="folder" onclick="openCategory('racing')">🏎 Racing Games</div>
-  <div class="folder" onclick="openCategory('action')">🔫 Action Games</div>
-  <div class="folder" onclick="openCategory('puzzle')">🧩 Puzzle Games</div>
-</section>
-
-<section class="games hidden" id="racing">
-  <div class="card"><img src="games/images (6).jpeg"><h3>Moto X3M</h3></div>
-  <div class="card"><img src="games/images.jpeg"><h3>Subway Surfers</h3></div>
-</section>
-
-<section class="games hidden" id="action">
-  <div class="card"><img src="games/2.jpeg"><h3>Blockpost</h3></div>
-  <div class="card"><img src="games/images (13).jpeg"><h3>Temple Run 2</h3></div>
-</section>
-
-<section class="games hidden" id="puzzle">
-  <div class="card"><img src="games/images (14).jpeg"><h3>2048</h3></div>
+<h2 class="section-title">⬇ Games to Download</h2>
+<section class="games" id="downloads">
+    <div class="card">
+        
+        <h3>Coming</h3>
+        <button class="play-btn download-btn">⬇ Download</button>
+    </div>
+    <div class="card">
+        
+        <h3>Soon !</h3>
+        <button class="play-btn download-btn">⬇ Download</button>
+    </div>
 </section>
 
 <footer>
-<p>© 2026 Universe of Games • Made with ❤️</p>
+    <div style="padding: 20px; max-width: 850px; margin: 0 auto;">
+        <h3 style="color: #38bdf8; margin-bottom: 10px;">About Universe of Games</h3>
+        <p style="color: #94a3b8; line-height: 1.6;">Universe of Games is your premium gateway to the most exciting online gaming experiences. We provide a curated selection of both playable and downloadable games, from action-packed adventures to challenging puzzles. Our platform is designed for gamers who crave high-quality performance and a stunning visual interface. Dive into the universe and start playing today!</p>
+    </div>
+    <p style="margin-top: 20px; color: #64748b;">© 2026 Universe of Games • Made with ❤️</p>
 </footer>
 
 <script src="JS/main.js"></script>

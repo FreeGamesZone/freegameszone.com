@@ -1,434 +1,64 @@
-/* ================= RESET ================= */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; scroll-behavior: smooth; }
+body { background: linear-gradient(180deg, #020617, #0f172a); color: #e5e7eb; overflow-x: hidden; }
 
-/* ================= BODY ================= */
-body {
-  background: linear-gradient(180deg, #020617, #0f172a);
-  color: #e5e7eb;
-  overflow-x: hidden;
-}
+.topbar { position: sticky; top: 0; display: flex; align-items: center; justify-content: space-between; padding: 10px 30px; background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); z-index: 1000; border-bottom: 2px solid #38bdf8; box-shadow: 0 5px 20px rgba(0,0,0,0.5); }
+.topbar .logo img { height: 100px; transition: 0.5s ease all; filter: drop-shadow(0 0 10px #38bdf8); }
+.main-nav { display: flex; gap: 20px; }
+.nav-btn { text-decoration: none; color: #e5e7eb; font-weight: bold; padding: 10px 20px; border-radius: 20px; background: rgba(255,255,255,0.05); border: 1px solid #38bdf8; transition: 0.3s; }
+.nav-btn:hover { background: #38bdf8; color: #020617; box-shadow: 0 0 20px #38bdf8; }
 
-/* ================= TOP BAR ================= */
+/* Change: Search bar expansion */
+#searchInput { width: 200px; padding: 12px 18px; border-radius: 22px; border: 1px solid #38bdf8; background: #020617; color: white; transition: 0.35s ease; }
+#searchInput:hover, #searchInput:focus { width: 300px; box-shadow: 0 0 30px #22c55e; outline: none; }
+
+.hero-slider { height: 60vh; position: relative; overflow: hidden; }
+.slide { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0; transition: 1s ease; }
+.slide.active { opacity: 1; }
+.slide::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to right, rgba(2,6,23,0.85), transparent); }
+
+.slide-content { position: absolute; bottom: 20%; left: 7%; z-index: 2; background: rgba(2,6,23,0.65); padding: 30px; border-radius: 22px; border: 1px solid rgba(56,189,248,0.25); }
+/* Change: Gap between name and button */
+.slide-content h1 { margin-bottom: 25px; } 
+
+.section-title { margin: 45px 30px 15px; font-size: 28px; color: #f8fafc; text-shadow: 0 0 12px #38bdf8; }
+.games { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 26px; padding: 30px; }
+
+/* Original Rainbow Glow Cards */
+.card { background: #020617; border-radius: 18px; overflow: hidden; text-align: center; position: relative; transition: 0.35s ease; border: 1px solid rgba(255,255,255,0.05); z-index: 1; }
+.card::after { content: ""; position: absolute; inset: -2px; background: linear-gradient(135deg, #38bdf8, #22c55e, #a855f7, #ff00c8); opacity: 0; filter: blur(20px); z-index: -1; transition: 0.35s; }
+.card:hover::after { opacity: 1; }
+.card:hover { transform: translateY(-10px) scale(1.02); }
+.card img { width: 100%; height: 150px; object-fit: cover; }
+.card h3 { padding: 12px; color: #e5e7eb; }
+
+/* Original Buttons Padding & Style */
+.play-btn, .slide-content button { width: 88%; margin-bottom: 16px; padding: 11px; border: none; border-radius: 14px; background: linear-gradient(135deg, #22c55e, #16a34a); color: #022c22; font-weight: bold; cursor: pointer; transition: 0.3s; box-shadow: 0 0 15px rgba(34,197,94,0.4); }
+.download-btn { background: linear-gradient(135deg, #38bdf8, #2563eb); }
+.play-btn:hover, .slide-content button:hover { transform: scale(1.05); box-shadow: 0 0 30px currentColor; }
+
+.folders { display: flex; gap: 25px; padding: 30px; }
+.folder { flex: 1; padding: 22px; text-align: center; border-radius: 22px; cursor: pointer; background: linear-gradient(135deg, #2563eb, #38bdf8); color: #020617; font-weight: bold; box-shadow: 0 0 25px rgba(56,189,248,0.6); transition: 0.35s; }
+.folder:hover { transform: scale(1.08); box-shadow: 0 0 45px #38bdf8; }
+
+#snow { position: fixed; inset: 0; pointer-events: none; z-index: 5000; }
+#snowBtn { position: fixed; bottom: 20px; left: 20px; background: linear-gradient(135deg,#4facfe,#00f2fe); color: white; border: none; padding: 10px 18px; border-radius: 25px; font-weight: bold; cursor: pointer; z-index: 9999; }
+footer { padding: 30px; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); color: #94a3b8; }
+.hidden { display: none; }
+/* Topbar ko thodi space den taake logo bara ho sake */
 .topbar {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px 30px;
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-  z-index: 10;
+    min-height: 120px; /* Header ki height barha di */
+    padding: 5px 30px;
 }
 
-.topbar .logo img {
-  height: 150px;
-  
-  transition: 0.5s ease all;
+.logo-img {
+    height: 150px !important; /* !important lagane se ye force apply hoga */
+    width: auto;
+    max-width: 300px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 10px #38bdf8);
+    transition: 0.3s ease;
 }
 
-/* ================= FLOATING LOGO ================= */
-.topbar.floating .logo img {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  height: 90px;
-  z-index: 5000; /* snow button ke neeche */
-  filter: drop-shadow(0 0 15px rgba(0,200,255,0.8));
-}
-
-/* ================= SEARCH ================= */
-#searchInput {
-  width: 200px;
-  padding: 12px 18px;
-  border-radius: 22px;
-  border: 1px solid #38bdf8;
-  background: #020617;
-  color: white;
-  font-size: 15px;
-  transition: 0.35s ease;
-}
-
-#searchInput::placeholder {
-  color: #94a3b8;
-}
-
-#searchInput:hover {
-  width: 260px;
-  box-shadow: 0 0 25px #38bdf8;
-}
-
-#searchInput:focus {
-  outline: none;
-  width: 280px;
-  box-shadow: 0 0 30px #22c55e;
-}
-
-/* ================= HERO SLIDER ================= */
-.hero-slider {
-  height: 60vh;
-  position: relative;
-  overflow: hidden;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-}
-
-.slide {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  opacity: 0;
-  transition: 1s ease;
-}
-
-.slide.active {
-  opacity: 1;
-}
-
-.slide::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to right, rgba(2,6,23,0.85), rgba(2,6,23,0.2));
-}
-
-.slide-content {
-  position: absolute;
-  bottom: 20%;
-  left: 7%;
-  z-index: 2;
-  background: rgba(2,6,23,0.65);
-  padding: 30px 35px;
-  border-radius: 22px;
-  border: 1px solid rgba(56,189,248,0.25);
-  animation: fadeUp 1s ease;
-}
-
-.slide-content h1 {
-  font-size: 38px;
-  color: #f8fafc;
-}
-
-.slide-content p {
-  margin-top: 8px;
-  color: #cbd5f5;
-}
-
-.slide-content button {
-  margin-top: 16px;
-  padding: 14px 26px;
-  border: none;
-  border-radius: 30px;
-  background: linear-gradient(135deg, #22c55e, #16a34a);
-  color: #022c22;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 0 0 25px rgba(34,197,94,0.6);
-  transition: 0.3s;
-}
-
-.slide-content button:hover {
-  transform: scale(1.08);
-  box-shadow: 0 0 40px #22c55e;
-}
-
-@keyframes fadeUp {
-  from {opacity:0; transform:translateY(40px);}
-  to {opacity:1; transform:translateY(0);}
-}
-
-/* ================= SECTION TITLES ================= */
-.section-title {
-  margin: 45px 30px 15px;
-  font-size: 28px;
-  color: #f8fafc;
-  text-shadow: 0 0 12px rgba(56,189,248,0.5);
-}
-
-/* ================= GAMES GRID ================= */
-.games {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
-  gap: 26px;
-  padding: 30px;
-}
-
-.card {
-  background: linear-gradient(180deg,#020617,#020617,#020617);
-  border-radius: 18px;
-  overflow: hidden;
-  text-align: center;
-  position: relative;
-  transition: 0.35s ease;
-  border:1px solid rgba(255,255,255,0.05);
-}
-
-/* Glow border */
-.card::after {
-  content:"";
-  position:absolute;
-  inset:-2px;
-  background: linear-gradient(135deg,#38bdf8,#22c55e,#a855f7);
-  opacity:0;
-  filter: blur(20px);
-  z-index: -1;
-  transition: 0.35s;
-}
-
-.card:hover::after {
-  opacity:1;
-}
-
-.card:hover {
-  transform: translateY(-10px) scale(1.02);
-}
-
-.card img {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-}
-
-.card h3 {
-  padding: 12px;
-  color: #e5e7eb;
-}
-
-.card button {
-  width: 88%;
-  margin-bottom: 16px;
-  padding: 11px;
-  border: none;
-  border-radius: 14px;
-  background: linear-gradient(135deg,#38bdf8,#2563eb);
-  color: #020617;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.card button:hover {
-  box-shadow: 0 0 30px #38bdf8;
-  transform: scale(1.05);
-}
-
-/* ================= FOLDERS ================= */
-.folders {
-  display: flex;
-  gap: 25px;
-  padding: 30px;
-}
-
-.folder {
-  flex:1;
-  padding: 22px;
-  text-align: center;
-  font-size: 18px;
-  border-radius: 22px;
-  cursor: pointer;
-  background: linear-gradient(135deg,#2563eb,#38bdf8);
-  color: #020617;
-  box-shadow:0 0 25px rgba(56,189,248,0.6);
-  transition:0.35s;
-}
-
-.folder:hover {
-  transform: scale(1.08);
-  box-shadow:0 0 45px #38bdf8;
-}
-
-/* ================= FOOTER ================= */
-footer {
-  padding: 30px;
-  text-align: center;
-  background: #020617;
-  color: #94a3b8;
-  border-top:1px solid rgba(255,255,255,0.05);
-}
-
-/* ================= SNOW ================= */
-#snow {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 5000;
-}
-
-#snowBtn {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: linear-gradient(135deg,#4facfe,#00f2fe);
-  color: white;
-  border: none;
-  padding: 10px 18px;
-  border-radius: 25px;
-  font-weight: bold;
-  cursor: pointer;
-  z-index: 9999; /* hamesha top */
-}
-
-.hidden {
-  display: none;
-}
-/* ===== MOBILE RESPONSIVE ===== */
-@media screen and (max-width: 768px) {
-  
-  /* Topbar / Logo & Search */
-  .topbar {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 15px 20px;
-  }
-
-  .topbar .logo img {
-    height: 100px; /* chhota logo */
-  }
-
-  #searchInput {
-    width: 100%;
-    margin-top: 10px;
-  }
-
-  /* Hero Slider Content */
-  .slide-content {
-    bottom: 15%;
-    left: 5%;
-    padding: 20px;
-  }
-
-  .slide-content h1 {
-    font-size: 28px;
-  }
-
-  .slide-content p {
-    font-size: 14px;
-  }
-
-  .slide-content button {
-    padding: 10px 18px;
-    font-size: 14px;
-  }
-
-  /* Games Grid */
-  .games {
-    grid-template-columns: repeat(auto-fit, minmax(160px,1fr));
-    gap: 15px;
-    padding: 20px;
-  }
-
-  .card img {
-    height: 120px;
-  }
-
-  /* Folders */
-  .folders {
-    flex-direction: column;
-    gap: 15px;
-    padding: 20px;
-  }
-
-  .folder {
-    font-size: 16px;
-    padding: 16px;
-  }
-
-  /* Floating Logo */
-  .topbar.floating .logo img {
-    height: 70px;
-    bottom: 15px;
-    right: 15px;
-  }
-}
-.play-btn {
-  width: 85%;
-  margin: 12px auto 18px;
-  padding: 12px 0;
-  border: none;
-  border-radius: 22px;
-  background: linear-gradient(135deg, #22c55e, #16a34a);
-  color: #022c22;
-  font-weight: bold;
-  font-size: 15px;
-  cursor: pointer;
-  box-shadow: 0 0 25px rgba(34,197,94,0.6);
-  transition: 0.3s ease;
-}
-
-.play-btn:hover {
-  transform: scale(1.07);
-  box-shadow: 0 0 40px #22c55e;
-}
-/* ================= MOBILE VERSION ================= */
-@media screen and (max-width: 768px) {
-
-  /* TOP BAR */
-  .topbar {
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-  }
-
-  /* LOGO CENTER */
-  .topbar .logo img {
-    height: 90px;
-  }
-
-  /* SEARCH BELOW LOGO */
-  #searchInput {
-    width: 95%;
-    text-align: center;
-  }
-
-  /* HERO SLIDER TEXT */
-  .slide-content {
-    left: 5%;
-    right: 5%;
-    bottom: 12%;
-    padding: 18px;
-  }
-
-  .slide-content h1 {
-    font-size: 24px;
-  }
-
-  /* GAMES HEADING */
-  .section-title {
-    text-align: center;
-    font-size: 22px;
-  }
-
-  /* ✅ 2 CARDS PER ROW */
-  .games {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    padding: 15px;
-  }
-
-  .card img {
-    height: 120px;
-  }
-
-  .card h3 {
-    font-size: 14px;
-  }
-
-  /* ABOUT / FOOTER */
-  footer {
-    font-size: 13px;
-  }
-
-  /* FOLDERS LAST */
-  .folders {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .folder {
-    font-size: 16px;
-    padding: 16px;
-  }
+.logo-img:hover {
+    transform: scale(1.1);
 }
