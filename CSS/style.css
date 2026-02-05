@@ -1,29 +1,29 @@
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; scroll-behavior: smooth; }
 body { background: linear-gradient(180deg, #020617, #0f172a); color: #e5e7eb; overflow-x: hidden; }
 
-.topbar { position: sticky; top: 0; display: flex; align-items: center; justify-content: space-between; padding: 10px 30px; background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); z-index: 1000; border-bottom: 2px solid #38bdf8; box-shadow: 0 5px 20px rgba(0,0,0,0.5); }
-.topbar .logo img { height: 100px; transition: 0.5s ease all; filter: drop-shadow(0 0 10px #38bdf8); }
+/* Topbar & Logo */
+.topbar { position: sticky; top: 0; display: flex; align-items: center; justify-content: space-between; min-height: 120px; padding: 5px 30px; background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); z-index: 1000; border-bottom: 2px solid #38bdf8; box-shadow: 0 5px 20px rgba(0,0,0,0.5); }
+.logo-img { height: 150px !important; width: auto; max-width: 300px; object-fit: contain; filter: drop-shadow(0 0 10px #38bdf8); transition: 0.3s ease; }
+.logo-img:hover { transform: scale(1.1); }
+
+/* Navigation & Search */
 .main-nav { display: flex; gap: 20px; }
 .nav-btn { text-decoration: none; color: #e5e7eb; font-weight: bold; padding: 10px 20px; border-radius: 20px; background: rgba(255,255,255,0.05); border: 1px solid #38bdf8; transition: 0.3s; }
 .nav-btn:hover { background: #38bdf8; color: #020617; box-shadow: 0 0 20px #38bdf8; }
-
-/* Change: Search bar expansion */
 #searchInput { width: 200px; padding: 12px 18px; border-radius: 22px; border: 1px solid #38bdf8; background: #020617; color: white; transition: 0.35s ease; }
-#searchInput:hover, #searchInput:focus { width: 300px; box-shadow: 0 0 30px #22c55e; outline: none; }
+#searchInput:focus { width: 300px; box-shadow: 0 0 30px #22c55e; outline: none; }
 
+/* Hero Slider */
 .hero-slider { height: 60vh; position: relative; overflow: hidden; }
 .slide { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0; transition: 1s ease; }
 .slide.active { opacity: 1; }
 .slide::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to right, rgba(2,6,23,0.85), transparent); }
-
 .slide-content { position: absolute; bottom: 20%; left: 7%; z-index: 2; background: rgba(2,6,23,0.65); padding: 30px; border-radius: 22px; border: 1px solid rgba(56,189,248,0.25); }
-/* Change: Gap between name and button */
 .slide-content h1 { margin-bottom: 25px; } 
 
+/* Game Cards (Rainbow Glow) */
 .section-title { margin: 45px 30px 15px; font-size: 28px; color: #f8fafc; text-shadow: 0 0 12px #38bdf8; }
 .games { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 26px; padding: 30px; }
-
-/* Original Rainbow Glow Cards */
 .card { background: #020617; border-radius: 18px; overflow: hidden; text-align: center; position: relative; transition: 0.35s ease; border: 1px solid rgba(255,255,255,0.05); z-index: 1; }
 .card::after { content: ""; position: absolute; inset: -2px; background: linear-gradient(135deg, #38bdf8, #22c55e, #a855f7, #ff00c8); opacity: 0; filter: blur(20px); z-index: -1; transition: 0.35s; }
 .card:hover::after { opacity: 1; }
@@ -31,34 +31,18 @@ body { background: linear-gradient(180deg, #020617, #0f172a); color: #e5e7eb; ov
 .card img { width: 100%; height: 150px; object-fit: cover; }
 .card h3 { padding: 12px; color: #e5e7eb; }
 
-/* Original Buttons Padding & Style */
+/* Buttons */
 .play-btn, .slide-content button { width: 88%; margin-bottom: 16px; padding: 11px; border: none; border-radius: 14px; background: linear-gradient(135deg, #22c55e, #16a34a); color: #022c22; font-weight: bold; cursor: pointer; transition: 0.3s; box-shadow: 0 0 15px rgba(34,197,94,0.4); }
-.download-btn { background: linear-gradient(135deg, #38bdf8, #2563eb); }
 .play-btn:hover, .slide-content button:hover { transform: scale(1.05); box-shadow: 0 0 30px currentColor; }
 
-.folders { display: flex; gap: 25px; padding: 30px; }
-.folder { flex: 1; padding: 22px; text-align: center; border-radius: 22px; cursor: pointer; background: linear-gradient(135deg, #2563eb, #38bdf8); color: #020617; font-weight: bold; box-shadow: 0 0 25px rgba(56,189,248,0.6); transition: 0.35s; }
-.folder:hover { transform: scale(1.08); box-shadow: 0 0 45px #38bdf8; }
+/* Game Modal (New) */
+.modal-overlay { position: fixed; inset: 0; background: rgba(2, 6, 23, 0.95); z-index: 10001; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(10px); }
+.modal-content { position: relative; width: 95%; height: 90%; border: 2px solid #38bdf8; border-radius: 25px; box-shadow: 0 0 60px rgba(56, 189, 248, 0.6); overflow: hidden; background: #000; }
+#gameFrame { width: 100%; height: 100%; border: none; }
+#closeModal { position: absolute; top: 10px; right: 20px; z-index: 100; background: linear-gradient(135deg, #ff00c8, #a855f7); color: white; border: none; padding: 12px 25px; border-radius: 50px; cursor: pointer; font-weight: bold; box-shadow: 0 0 20px #ff00c8; }
+.hidden { display: none !important; }
 
+/* Snow & Footer */
 #snow { position: fixed; inset: 0; pointer-events: none; z-index: 5000; }
 #snowBtn { position: fixed; bottom: 20px; left: 20px; background: linear-gradient(135deg,#4facfe,#00f2fe); color: white; border: none; padding: 10px 18px; border-radius: 25px; font-weight: bold; cursor: pointer; z-index: 9999; }
 footer { padding: 30px; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); color: #94a3b8; }
-.hidden { display: none; }
-/* Topbar ko thodi space den taake logo bara ho sake */
-.topbar {
-    min-height: 120px; /* Header ki height barha di */
-    padding: 5px 30px;
-}
-
-.logo-img {
-    height: 150px !important; /* !important lagane se ye force apply hoga */
-    width: auto;
-    max-width: 300px;
-    object-fit: contain;
-    filter: drop-shadow(0 0 10px #38bdf8);
-    transition: 0.3s ease;
-}
-
-.logo-img:hover {
-    transform: scale(1.1);
-}
