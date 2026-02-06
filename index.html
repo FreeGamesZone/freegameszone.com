@@ -15,7 +15,7 @@
 <div id="gameModal" class="modal-overlay hidden">
     <div class="modal-content">
         <button id="closeModal">✖ Close Game</button>
-        <iframe id="gameFrame" src="" frameborder="0" allowfullscreen></iframe>
+        <iframe id="gameFrame" src="" frameborder="0" allowfullscreen allow="autoplay; fullscreen; gamepad; accelerometer"></iframe>
     </div>
 </div>
 
@@ -31,121 +31,79 @@
 </header>
 
 <section class="hero-slider">
-    <div class="slide active" style="background-image:url('games/minecraft-key-art-feature.jpg')">
-        <div class="slide-content">
+    <div class="slide active">
+         <img src="games/minecraft.jpg" class="slider-img" alt="Minecraft">
+         <div class="slide-content">
             <h1>Minecraft</h1>
-            <button onclick="openGame('https://eaglercraft.com/play/?version=1.12.2-wasm')">▶ Play Now</button>
+            <button onclick="openGame('https://eaglercraft.com/play/?version=1.8.8')">▶ Play Now</button>
         </div>
     </div>
-    <div class="slide" style="background-image:url('games/images (1).jpeg')">
+    <div class="slide">
+        <img src="games/venge.jpeg" class="slider-img" alt="Venge.io">
         <div class="slide-content">
-            <h1>Hill Climb Racing</h1>
-            <button onclick="openGame('https://kdata1.com/2020/05/hill-climb-racing/')">▶ Play Now</button>
+            <h1>Venge.io</h1>
+            <button onclick="openGame('https://venge.io/')">▶ Play Now</button>
         </div>
     </div>
-    <div class="slide" style="background-image:url('games/2.jpeg')">
+    <div class="slide">
+        <img src="games/smash karts.png" class="slider-img" alt="Smash Karts">
         <div class="slide-content">
-            <h1>Slope (Blockpost Alt)</h1>
-            <button onclick="openGame('https://kdata1.com/2020/05/slope/')">▶ Play Now</button>
+            <h1>Smash Karts</h1>
+            <button onclick="openGame('https://smashkarts.io/')">▶ Play Now</button>
         </div>
-    </div>
 </section>
 
 <h2 class="section-title">🔥 Games to Play</h2>
 <section class="games" id="gamesList">
-
     <div class="card">
-        <img src="games/images (1).jpeg">
-        <h3>Hill Climb Racing</h3>
-        <button class="play-btn" onclick="openGame('https://html5.gamedistribution.com/39668470438a4d46944062f83149d59a/')">▶ Play</button>
+        <img src="games/paper.io 2.png" alt="Paper.io 2">
+        <h3>Paper.io 2</h3>
+        <button class="play-btn" onclick="openGame('https://paper-io.com/')">▶ Play</button>
     </div>
-
     <div class="card">
-        <img src="games/images (2).jpeg">
-        <h3>Solar Smash</h3>
-        <button class="play-btn" onclick="openGame('https://html5.gamedistribution.com/56729007e04e4c9f9660507a6370422c/')">▶ Play</button>
+        <img src="games/hextris.png" alt="Paper.io 2">
+        <h3>Hextris.io</h3>
+        <button class="play-btn" onclick="openGame('https://hextris.io/')">▶ Play</button>
     </div>
-
     <div class="card">
-        <img src="games/images (3).jpeg">
-        <h3>Short Life</h3>
-        <button class="play-btn" onclick="openGame('https://html5.gamedistribution.com/69493f9601f046468765239a5312368c/')">▶ Play</button>
-    </div>
-
-    <div class="card">
-        <img src="games/minecraft-key-art-feature.jpg">
+        <img src="games/minecraft.jpg" alt="Minecraft">
         <h3>Minecraft</h3>
-        <button class="play-btn" onclick="openGame('https://eaglercraft.com/play/?version=1.12.2-wasm')">▶ Play</button>
+        <button class="play-btn" onclick="openGame('https://eaglercraft.com/play/?version=1.8.8')">▶ Play</button>
     </div>
-
     <div class="card">
-        <img src="games/2.jpeg">
-        <h3>Blockpost</h3>
-        <button class="play-btn" onclick="openGame('https://html5.gamedistribution.com/d09433e2aa9848c8861d9a242c4b819f/')">▶ Play</button>
-    </div>
-
-    <div class="card">
-        <img src="games/images (4).jpeg">
-        <h3>Basketball Stars</h3>
-        <button class="play-btn" onclick="openGame('https://html5.gamedistribution.com/62a765cb1f1b4020a59a721df266df16/')">▶ Play</button>
-    </div>
-
-    <div class="card">
-        <img src="games/images (5).jpeg">
+        <img src="games/venge.jpeg" alt="Venge.io">
         <h3>Venge.io</h3>
         <button class="play-btn" onclick="openGame('https://venge.io/')">▶ Play</button>
     </div>
-
     <div class="card">
-        <img src="games/images (6).jpeg">
-        <h3>Moto X3M</h3>
-        <button class="play-btn" onclick="openGame('https://html5.gamedistribution.com/0ae004c3da1b4b1c8f18073b6f84f938/')">▶ Play</button>
+        <img src="games/ev.io.png" alt="Ev.io">
+        <h3>Ev.io</h3>
+        <button class="play-btn" onclick="openGame('https://ev.io/')">▶ Play</button>
     </div>
-
     <div class="card">
-        <img src="games/images (7).jpeg">
-        <h3>Stickman Hook</h3>
-        <button class="play-btn" onclick="openGame('https://html5.gamedistribution.com/00e82c7f55f24256be47990422c53b21/')">▶ Play</button>
+        <img src="games/smash karts.png" alt="Smash Karts">
+        <h3>Smash Karts</h3>
+        <button class="play-btn" onclick="openGame('https://smashkarts.io/')">▶ Play</button>
     </div>
-
     <div class="card">
-        <img src="games/images (8).jpeg">
-        <h3>12 MiniBattles</h3>
-        <button class="play-btn" onclick="openGame('https://html5.gamedistribution.com/d94411135c34444c9b362140a349c258/')">▶ Play</button>
+        <img src="games/2048.jpeg" alt="2048">
+        <h3>2048</h3>
+        <button class="play-btn" onclick="openGame('https://2048game.com/')">▶ Play</button>
     </div>
-
-    <div class="card">
-        <img src="games/images (9).jpeg">
-        <h3>Popular Words</h3>
-        <button class="play-btn" onclick="openGame('https://html5.gamedistribution.com/8308f90226d94632857e324022a4413e/')">▶ Play</button>
-    </div>
-
-    <div class="card">
-        <img src="games/images (10).jpeg">
-        <h3>Guess What?</h3>
-        <button class="play-btn" onclick="openGame('https://html5.gamedistribution.com/f255269781044439b1e956e268f7601f/')">▶ Play</button>
-    </div>
-
 </section>
 
 <h2 class="section-title">⬇ Games to Download</h2>
 <section class="games" id="downloads">
-    <div class="card">
-        <h3>Coming</h3>
-        <button class="play-btn download-btn">⬇ Download</button>
-    </div>
-    <div class="card">
-        <h3>Soon !</h3>
-        <button class="play-btn download-btn">⬇ Download</button>
-    </div>
+    <div class="card"><h3>Coming</h3><button class="play-btn download-btn">⬇ Download</button></div>
+    <div class="card"><h3>Soon !</h3><button class="play-btn download-btn">⬇ Download</button></div>
 </section>
 
 <footer>
     <div style="padding: 20px; max-width: 850px; margin: 0 auto;">
         <h3 style="color: #38bdf8; margin-bottom: 10px;">About Universe of Games</h3>
-        <p style="color: #94a3b8; line-height: 1.6;">Universe of Games is your premium gateway to the most exciting online gaming experiences. We provide a curated selection of both playable and downloadable games, from action-packed adventures to challenging puzzles. Our platform is designed for gamers who crave high-quality performance and a stunning visual interface. Dive into the universe and start playing today!</p>
+        <p style="color: #94a3b8; line-height: 1.6;">Universe of Games is your premium gateway to online gaming.</p>
     </div>
-    <p style="margin-top: 20px; color: #64748b;">© 2026 Universe of Games • Made with ❤️</p>
+    <p>© 2026 Universe of Games • Made with ❤️</p>
 </footer>
 
 <script src="JS/main.js"></script>
