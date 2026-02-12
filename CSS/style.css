@@ -375,59 +375,46 @@ footer { padding: 40px; border-top: 1px solid #1a1f26; text-align: center; backg
 /* Mobile Responsive Fixes */
 /* --- UPDATED MOBILE FRIENDLY SECTION --- */
 @media (max-width: 768px) {
-    /* 1. Sidebar ko hide karke space bachao */
-    .sidebar { display: none; }
-    .main-content { margin-left: 0; }
+    /* 1. Hero Slider ko Mobile par khatam karo */
+    .hero { 
+        display: none !important; 
+    }
 
-    /* 2. Topbar ko compact karo */
+    /* 2. Topbar & Search Fix */
     .topbar {
-        padding: 15px;
-        flex-direction: column; /* Logo upar, search niche */
-        gap: 10px;
+        padding: 10px !important;
+        flex-direction: column !important;
+        text-align: center;
     }
-    .topbar h2 { font-size: 1.2rem; }
+    .search-bar { width: 90% !important; margin: 10px auto !important; }
 
-    /* 3. Search Bar ko full width karo */
-    .search-bar {
-        width: 100% !important;
-        box-shadow: 0 0 10px rgba(188, 19, 254, 0.3);
-    }
+    /* 3. Sidebar Hide */
+    .sidebar { display: none !important; }
+    .main-content { margin-left: 0 !important; padding: 10px !important; }
 
-    /* 4. Hero Section height kam karo */
-    .hero {
-        height: 220px;
-        margin: 15px;
-    }
-    .slide-info h1 { font-size: 1.5rem; }
-    .slide-info button { padding: 10px 20px; font-size: 0.9rem; }
-
-    /* 5. Games Grid: 2 Cards per row (Best for Mobile) */
+    /* 4. Games Grid (Perfect 2 columns) */
     .games-grid {
-        grid-template-columns: repeat(2, 1fr); 
-        gap: 12px;
-        padding: 0 15px 20px;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+        padding: 0 !important;
     }
-    .card img { height: 110px; }
-    .card h3 { font-size: 0.85rem; padding: 10px; }
+    .card img { height: 110px !important; }
 
-    /* 6. Modal ko Full Screen karo (Game khelne ke liye) */
-    .modal-content {
-        width: 100%;
-        height: 100%;
-        border: none;
+    /* 5. Footer / Last Text Fix (Jo ajeeb dikh raha tha) */
+    .site-description {
+        margin: 20px 10px !important;
+        padding: 15px !important;
+        width: auto !important;
+        background: #1a1a1a !important; /* Dark background taake text dikhe */
+        border-radius: 10px;
     }
-    #closeModal {
-        top: 10px;
-        right: 10px;
-        padding: 5px 15px;
+    .description-content h2 {
+        font-size: 1.2rem !important;
+        margin-bottom: 10px !important;
     }
-
-    /* 7. Footer text size */
-    .site-description { margin: 15px; padding: 20px; }
-    .description-content p { font-size: 0.9rem; }
-
-    /* 8. Loader size corner mein chota karo mobile ke liye */
-    .infinity-loader svg {
-        width: 120px;
+    .description-content p {
+        font-size: 0.85rem !important;
+        line-height: 1.5 !important;
+        color: #ccc !important;
+        text-align: justify;
     }
-} 
